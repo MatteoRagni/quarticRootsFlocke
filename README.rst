@@ -1,7 +1,8 @@
 Quartic Roots Solver
 ====================
 
-|Build Status|
+.. note:: This is a modified version to be included in Clothoids project
+          with several useless stuff (i.e., rake etc.) removed
 
 Polynomial Roots Solver
 -----------------------
@@ -72,6 +73,3 @@ Author
   | Dipartimento di Ingegneria Industriale
   | Universita` degli Studi di Trento
   | email: enrico.bertolazzi@unitn.it
-
-.. |Build Status| image:: https://travis-ci.org/ebertolazzi/quarticRootsFlocke.svg?branch=master
-   :target: https://travis-ci.org/ebertolazzi/quarticRootsFlocke
