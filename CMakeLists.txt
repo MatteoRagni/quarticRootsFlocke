@@ -93,6 +93,7 @@ target_include_directories(PolynomialRootsStatic PUBLIC
  "$<INSTALL_INTERFACE:include/PolynomialRoots>")
 set_target_properties(PolynomialRootsStatic PROPERTIES
   POSITION_INDIPENDENT_CODE ON
+  OUTPUT_NAME PolynomialRoots
   EXPORT_NAME PolynomialRoots_Targets)
 add_library(PolynomialRoots::Static ALIAS PolynomialRootsStatic)
 
@@ -111,6 +112,7 @@ if(POLYNOMIAL_ROOTS_BUILD_SHARED)
     POSITION_INDIPENDENT_CODE ON
     VERSION ${PROJECT_VERSION}
     SOVERSION ${PROJECT_VERSION_MAJOR}
+    OUTPUT_NAME PolynomialRoots
     EXPORT_NAME PolynomialRoots_Targets)
   add_library(PolynomialRoots::Dynamic ALIAS PolynomialRootsDynamic)
 endif()
@@ -150,7 +152,7 @@ export(EXPORT "${PROJECT_NAME}_Targets"
   FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}Targets.cmake"
   NAMESPACE "${PROJECT_NAMESPACE}::")
 
-configure_file("cmake/${PROJECT_NAME}Config.cmake.in"
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake/${PROJECT_NAME}Config.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
   @ONLY)
 
